@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Akashgati Fellowship Design System - Aviation Premium */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 30% 12%;
+
+    --card: 210 25% 98%;
+    --card-foreground: 220 30% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 12%;
+
+    /* Deep Aviation Navy */
+    --primary: 215 50% 18%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Light Sky Accent */
+    --secondary: 210 30% 96%;
+    --secondary-foreground: 215 50% 18%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Sky Blue Accent */
+    --accent: 205 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 205 85% 55%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --aviation-navy: 215 50% 18%;
+    --aviation-sky: 205 85% 55%;
+    --aviation-steel: 210 15% 55%;
+    --aviation-cloud: 210 25% 98%;
+    --aviation-silver: 210 10% 92%;
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    /* Shadows */
+    --shadow-subtle: 0 2px 8px -2px hsl(215 50% 18% / 0.08);
+    --shadow-card: 0 4px 20px -4px hsl(215 50% 18% / 0.1);
+    --shadow-elevated: 0 12px 40px -8px hsl(215 50% 18% / 0.15);
+
+    /* Sidebar defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 210 20% 96%;
+    --card: 220 25% 12%;
+    --card-foreground: 210 20% 96%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 205 85% 55%;
+    --primary-foreground: 220 30% 8%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 210 15% 60%;
+    --accent: 205 85% 55%;
+    --accent-foreground: 220 30% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 205 85% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .shadow-subtle {
+    box-shadow: var(--shadow-subtle);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-elevated {
+    box-shadow: var(--shadow-elevated);
+  }
+}
