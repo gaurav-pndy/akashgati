@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Plane } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -40,23 +41,22 @@ const Header = () => {
         }`}
       >
         <div className="container px-6">
-          <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center justify-between h-[4.5rem] md:h-24">
             {/* Logo */}
-            <a
-              href="#"
+            <Link
+              to="#"
               onClick={(e) => {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
               className="flex items-center gap-2"
             >
-              <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                <Plane className="w-4 h-4 text-primary-foreground" />
-              </div>
-              <span className="font-display font-semibold text-foreground hidden sm:block">
-                Akashgati
-              </span>
-            </a>
+              <img
+                src="/logo.svg"
+                alt="Akashgati logo"
+                className="h-12 md:h-16"
+              />
+            </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-6">
@@ -85,7 +85,11 @@ const Header = () => {
               className="lg:hidden p-2 text-foreground"
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? (
+                <X className="w-8 h-8" />
+              ) : (
+                <Menu className="w-8 h-8" />
+              )}
             </button>
           </div>
         </div>
