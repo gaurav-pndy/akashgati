@@ -42,7 +42,7 @@ const Hero = () => {
           >
             <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
             <span className="text-sm font-medium text-muted-foreground">
-              Applications Opening July 2026
+              Applications Opening April 2026
             </span>
           </motion.div>
 
