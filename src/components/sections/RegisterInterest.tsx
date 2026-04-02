@@ -1,18 +1,7 @@
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
+import { useRef } from "react";
+
 import { CheckCircle2, AlertCircle } from "lucide-react";
-import { toast } from "@/hooks/use-toast";
 
 const benefits = [
   "Receive application launch notification",
@@ -23,49 +12,31 @@ const benefits = [
 const RegisterInterest = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Interest Registered!",
-      description:
-        "We'll notify you when applications open for the October 2026 cohort.",
-    });
-  };
-
-  if (isSubmitted) {
-    return (
-      <section id="register" className="py-24 md:py-32 bg-background" ref={ref}>
-        <div className="container px-6">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="max-w-md mx-auto text-center"
-          >
-            <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle2 className="w-8 h-8 text-accent" />
-            </div>
-            <h3 className="font-display text-2xl font-semibold text-foreground mb-4">
-              You're on the list!
-            </h3>
-            <p className="text-muted-foreground font-body">
-              We'll notify you when applications open for the October 2026
-              cohort. Keep an eye on your inbox.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-    );
-  }
+  // if (isSubmitted) {
+  //   return (
+  //     <section id="register" className="py-24 md:py-32 bg-background" ref={ref}>
+  //       <div className="container px-6">
+  //         <motion.div
+  //           initial={{ opacity: 0, scale: 0.95 }}
+  //           animate={{ opacity: 1, scale: 1 }}
+  //           className="max-w-md mx-auto text-center"
+  //         >
+  //           <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+  //             <CheckCircle2 className="w-8 h-8 text-accent" />
+  //           </div>
+  //           <h3 className="font-display text-2xl font-semibold text-foreground mb-4">
+  //             You're on the list!
+  //           </h3>
+  //           <p className="text-muted-foreground font-body">
+  //             We'll notify you when applications open for the October 2026
+  //             cohort. Keep an eye on your inbox.
+  //           </p>
+  //         </motion.div>
+  //       </div>
+  //     </section>
+  //   );
+  // }
 
   return (
     <section id="register" className="py-24 md:py-32 bg-background" ref={ref}>
